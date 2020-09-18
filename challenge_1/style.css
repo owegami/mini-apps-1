@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+table, tr, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 400px;
+  height: 400px;
+}
+
+td {
+  width: 33.33%;
+  height: 33.33%;
+  text-align: center;
+  font-size: 3em;
+}
+
+.winBox {
+  width: 390px;
+  height: 290px;
+  background-color: mintcream;
+  border: 6px dashed teal;
+  position: absolute;
+  top: 170px;
+  left: 13px;
+}
+
+#inside {
+  padding: 30px;
+}
+
+#won {
+  font-size: 5em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkcyan;
+}
+
+#willwin {
+  opacity: 0%;
+  z-index: -1;
+}
+
+#winner{
+  opacity: 70%;
+  z-index: 1;
+}

@@ -1,2 +1,42 @@
+<!DOCTYPE html>
+<html>
 
+  <head>
+    <title>Tic-Tac-TOE!</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" >
+  </head>
 
+  <body onLoad="playGame()">
+    <header>
+      <h1>Let's play Tic-Tac-Toe!</h1>
+      <h3>Click a box to put down the first move:</h3>
+    </header>
+
+    <table class="table-container">
+      <tr id="row1" class="table-row">
+        <td id="cell1" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell2" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell3" class="table-cell" onclick="placeXO(this.id)"></td>
+      </tr>
+      <tr id="row2" class="table-row">
+        <td id="cell4" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell5" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell6" class="table-cell" onclick="placeXO(this.id)"></td>
+      </tr>
+      <tr id="row3" class="table-row">
+        <td id="cell7" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell8" class="table-cell" onclick="placeXO(this.id)"></td>
+        <td id="cell9" class="table-cell" onclick="placeXO(this.id)"></td>
+      </tr>
+    </table>
+
+    <div id="willwin" class="winBox">
+      <div id="inside">
+        <span id="won">YOU'VE WON!!</span>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
