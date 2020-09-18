@@ -6,10 +6,24 @@
   </head>
 
   <body>
-    <p>
-      Hi there. Aren't CSV reports so much fun???
-    </p>
+    <div id="inputContainer" style="font-family: 'Courier New', Courier, monospace; border-bottom: 2px dashed black;">
+      <h1>Welcome to our CSV Report Generator!</h1>
+      <h2>Such exciting stuff, right?</h2>
+      <h3>I know I can barely contain my excitement!</h3>
+      <h4>Anyway, input the JSON data you would like to trasnform into a CSV report and we can get started.</h4><br><br>
 
+      <label for="JSONtext">Please inout JSON data below:</label>
+      <textarea id="JSONtext" name="JSONtext" rows="10" cols="50"></textarea>
+      <button type="button">Submit and receive your data printed below</button>
+      <br><br><br>
+    </div>
+
+    <div id="outputContainer" style="font-family: 'Courier New', Courier, monospace;">
+      <h4>Sooo <em>excited</em> for that data to get over here so we can check it out! Aren't you?!</h4>
+      <div id="dataOutput">
+
+      </div>
+    </div>
   </body>
 
 </html>
