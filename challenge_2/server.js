@@ -46,8 +46,28 @@ app.post('/JSONData', (req, res) => {
   }
   let returning = [];
   returning.push(results.join('<br>'), '<br><br>Inputed Data:<br><br>', req.body.JSONtext);
+  returning.unshift(`<div id="inputContainer" style="font-family: 'Courier New', Courier, monospace; border-bottom: 2px dashed black;">
+  <h1>Welcome to our CSV Report Generator!</h1>
+  <h2>Such exciting stuff, right?</h2>
+  <h3>I know I can barely contain my excitement!</h3>
+  <h4>Anyway, input the JSON data you would like to transform into a CSV report and we can get started.</h4><br><br>
+
+  <form action="http://localhost:8000/JSONData" method="POST" >
+    <label for="JSONtext">Please input JSON data below:<br></label>
+    <textarea id="JSONtext" name="JSONtext" rows="10" cols="50"></textarea>
+    <input type="submit" value="Submit and receive your data printed below">
+  </form>
+  <br><br><br>
+</div>
+
+<div id="outputContainer" style="font-family: 'Courier New', Courier, monospace;">
+  <h4>Sooo <em>excited</em> for that data to get over here so we can check it out! Aren't you?!</h4>
+  <div id="dataOutput">
+
+  </div>
+</div>`)
   console.log(returning);
-  res.send(returning.join('<br><br>'));
+  res.send(returning.join('<br>'));
 })
 
 
