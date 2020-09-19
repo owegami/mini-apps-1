@@ -3,6 +3,8 @@
   <head>
     <title>CSV Processor</title>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='/app.js'></script>
   </head>
 
   <body>
@@ -10,11 +12,12 @@
       <h1>Welcome to our CSV Report Generator!</h1>
       <h2>Such exciting stuff, right?</h2>
       <h3>I know I can barely contain my excitement!</h3>
-      <h4>Anyway, input the JSON data you would like to trasnform into a CSV report and we can get started.</h4><br><br>
+      <h4>Anyway, input the JSON data you would like to transform into a CSV report and we can get started.</h4><br><br>
 
-      <label for="JSONtext">Please inout JSON data below:</label>
+      <label for="JSONtext">Please input JSON data below:<br></label>
       <textarea id="JSONtext" name="JSONtext" rows="10" cols="50"></textarea>
-      <button type="button">Submit and receive your data printed below</button>
+      <br>
+      <button type="button" onclick="jsonFetcher()">Submit and receive your data printed below</button>
       <br><br><br>
     </div>
 
@@ -24,6 +27,7 @@
 
       </div>
     </div>
+
   </body>
 
 </html>
