@@ -44,8 +44,9 @@ app.post('/JSONData', (req, res) => {
   for (let i = 0; i < props.length; i++) {
     result.push(props[i].join());
   }
-
-  res.send(result.join('\n'));
+  result = result.join('\n');
+  console.log(result);
+  res.send(result);
 })
 
 
