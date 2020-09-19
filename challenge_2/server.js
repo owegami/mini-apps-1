@@ -4,6 +4,7 @@ const port = 8000;
 
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/client'));
 
 app.get('/JSONData', (req, res) => {
@@ -11,42 +12,42 @@ app.get('/JSONData', (req, res) => {
 })
 
 app.post('/JSONData', (req, res) => {
-  let data = req.body;
+  let data = JSON.parse(req.body.JSONtext);
   let keys = Object.keys(data);
   keys.pop();
   console.log(keys);
   let props = [];
-  let result = [];
+  let results = [];
 
+  let tempArray = [];
   const recurseData = (node) => {
-    // debugger;
-    // console.log('node:', node);
-    for (let i = 0; i < node.length; i++) {
-      let tempArray = [];
-      for (let key in node[i]) {
-        if (key != 'children') {
-          tempArray.push(node[i][key]);
-        }
-      }
-      // debugger;
-      // console.log('temp:', tempArray);
-      props.push(tempArray);
-      if (node[i].children.length > 0) {
-        // debugger;
-        recurseData(node[i].children);
+
+    console.log(node);
+    tempArray = [];
+    for (let key in node) {
+      if (key !== 'children') {
+        tempArray.push(node[key]);
       }
     }
+    props.push(tempArray);
+    if (node.children !== undefined && node.children.length > 0) {
+      // debugger;
+      for (let i = 0; i < node.children.length; i++) {
+        recurseData(node.children[i]);
+      }
+    }
+  // }
   }
 
-  recurseData(data.children);
-  // console.log('props:', props);
-  result.push(keys.join());
+  recurseData(data);
+  results.push(keys.join());
   for (let i = 0; i < props.length; i++) {
-    result.push(props[i].join());
+    results.push(props[i].join());
   }
-  result = result.join('\n');
-  console.log(result);
-  res.send(result);
+  let returning = [];
+  returning.push(results.join('<br>'), '<br><br>Inputed Data:<br><br>', req.body.JSONtext);
+  console.log(returning);
+  res.send(returning.join('<br><br>'));
 })
 
 
