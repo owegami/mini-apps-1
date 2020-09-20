@@ -14,9 +14,9 @@
       <h3>I know I can barely contain my excitement!</h3>
       <h4>Anyway, input the JSON data you would like to transform into a CSV report and we can get started.</h4><br><br>
 
-      <form action="http://localhost:8000/JSONData" method="POST" >
-        <label for="JSONtext">Please input JSON data below:<br></label>
-        <textarea id="JSONtext" name="JSONtext" rows="10" cols="50"></textarea>
+      <form action="http://localhost:8000/JSONData" method="POST" enctype="multipart/form-data">
+        <label for="JSONtext">Please input JSON data file below:<br></label>
+        <input type='file' id='JSONtext' name='JSONtext'>
         <input type="submit" value="Submit and receive your data printed below">
       </form>
       <br><br><br>

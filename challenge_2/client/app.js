@@ -15,6 +15,6 @@ const jsonFetcher = () => {
 
 }
 
-const output = () => {
-  console.log(arguments);
+const fileFetched = () => {
+
 }
